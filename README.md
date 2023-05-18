@@ -29,7 +29,7 @@ desde diferentes pisos y muestre el estado actual del montacargas en el display 
     * Si el botón de detener es presionado y el montacargas está en movimiento, se detiene el montacargas, se establece en pausa, se muestra el piso actual en el puerto serial y se envía un mensaje indicando que el montacargas se detuvo en ese piso.
 
 
-* Si el montacargas está en movimiento (enMovimiento es true), se produce un retardo de 1 segundo y luego se ejecuta el siguiente bloque:
+* Si el montacargas está en movimiento (enMovimiento es true), se produce un retardo de 3 segundos y luego se ejecuta el siguiente bloque:
 
     * Si el piso actual es menor a 9, se llama a movimientoMontaCargas() para encender el LED verde y apagar el LED rojo, se incrementa el piso actual, se muestra el piso actual en el display de 7 segmentos y se envía un mensaje indicando que el montacargas está subiendo.
 
@@ -95,7 +95,7 @@ void loop() {
     }
   
     if (enMovimiento) { 
-        delay(1000);         
+        delay(3000);         
         if (pisoActual < 9) {
             movimientoMontaCargas();
             pisoActual++;
